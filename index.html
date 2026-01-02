@@ -3,20 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Control de Gastos</title>
+    <title>Control de Gastos Pro</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="container">
         <h1>💰 Mis Gastos</h1>
         <div class="balance">
-            <h2>Total: <span id="total">$0</span></h2>
+            <h2>Total: <span id="total">$0.00</span></h2>
         </div>
+
+        <div style="margin-bottom: 20px;">
+            <canvas id="graficoGastos"></canvas>
+        </div>
+
         <form id="form">
             <input type="text" id="nombre" placeholder="¿En qué gastaste?" required>
             <input type="number" id="monto" placeholder="Monto $" required>
             <button type="submit">Agregar Gasto</button>
         </form>
+        
         <ul id="lista"></ul>
         <button id="limpiar" class="btn-secundario">Limpiar todo</button>
     </div>
